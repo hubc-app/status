@@ -1,22 +1,32 @@
+import Head from 'next/head';
+
 module.exports = () => (
 	<>
-		<style>{`
-    body {
-        font-family: monospace;
-        font-size: larger;
-    }
-    div {
-        width: 360px;
-        margin: auto;
-    }
-    a {
-        color: black;
-        text-decoration: none;
-    }
-    .code {
-        color: #d6156d;
-    }
-`}</style>
+		<Head>
+			<title>HTTP status as a service</title>
+			<style>
+				{`
+					body {
+						font-family: monospace;
+						font-size: larger;
+					}
+					div {
+						width: 360px;
+						margin: auto;
+					}
+					a {
+						color: black;
+						text-decoration: none;
+					}
+					.code {
+						color: #d6156d;
+					}
+				`}
+			</style>
+		</Head>
+		<h2>
+			HTTP status <span class="code">as a service</span>
+		</h2>
 		<h3>
 			<span class="code">1××</span> Informational
 		</h3>
@@ -347,5 +357,8 @@ module.exports = () => (
 				<span class="code">599</span> Network Connect Timeout Error
 			</a>
 		</div>
+		<h2>
+			Served with <span class="code">❤︎</span> by <a href="https://hubc.app/">hubc.app</a>
+		</h2>
 	</>
 );
