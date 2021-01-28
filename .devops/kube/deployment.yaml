@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: '${namespace}'
+  name: '${package_name}'
+  labels:
+    app: '${package_name}'
+    sha: '${sha}'
+spec:
+  replicas: ${replicas}
+  selector:
+    matchLabels:
+      app: '${package_name}'
+  template:
+    metadata:
+      labels:
+        app: '${package_name}'
+        sha: '${sha}'
+    spec:
+      containers:
+        - name: static-site
+          image: '${package_image}'
+          ports:
+            - containerPort: 3000

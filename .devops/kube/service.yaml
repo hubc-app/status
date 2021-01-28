@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: '${namespace}'
+  name: '${package_name}'
+  labels:
+    app: '${package_name}'
+    sha: '${sha}'
+spec:
+  selector:
+    app: '${package_name}'
+  ports:
+    - name: http
+      port: 80
+      targetPort: 3000
+      protocol: TCP
